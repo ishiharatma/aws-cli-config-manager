@@ -1,0 +1,13 @@
+[profile project-a-dev]
+region = us-east-1
+output = json
+[profile project-a-prod]
+region = eu-west-1
+output = json
+sso_account_id = 123456789012
+sso_role_name = ProjectAAdminRole
+sso_session = project-a-prod-session
+[sso-session project-a-prod-session]
+sso_start_url = https://my-sso-portal.awsapps.com/start
+sso_region = eu-west-1
+sso_registration_scopes = sso:account:access

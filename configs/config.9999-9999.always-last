@@ -1,0 +1,9 @@
+[profile admin]
+region = us-east-1
+output = json
+
+[profile temp-profile]
+# This temporary profile will always appear at the end
+region = us-west-2
+output = table
+duration_seconds = 3600
