@@ -75,6 +75,37 @@ Debug mode (shows all steps without making changes):
 .\aws-cli-config-manager.ps1 -Debug
 ```
 
+### Execution Examples
+
+Output when running in debug mode:
+
+```powershell
+PS> .\aws-cli-config-manager.ps1 -Debug
+[DEBUG] Running in debug mode
+[DEBUG] Current working directory: C:\Users\username\aws-settings
+[DEBUG] AWS credentials path: C:\Users\username\.aws\credentials
+[DEBUG] AWS config path: C:\Users\username\.aws\config
+[DEBUG] Credentials directory: C:\Users\username\aws-settings\credentials
+[DEBUG] Backup path: C:\Users\username\.aws\credentials.bak
+[DEBUG] Found 3 files (pattern: credentials.*):
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0301.project-a
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0310.project-b
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0315.project-c
+...
+[DEBUG] Completed debug mode run - no actual changes were made
+```
+
+Output when running in normal mode:
+
+```powershell
+PS> .\aws-cli-config-manager.ps1
+Backed up existing file to: C:\Users\username\.aws\credentials.bak
+Successfully updated file: C:\Users\username\.aws\credentials
+Backed up existing file to: C:\Users\username\.aws\config.bak
+Successfully updated file: C:\Users\username\.aws\config
+Process completed: 2 file(s) updated
+```
+
 ## Advanced Usage Tips
 
 - **Order Control**: Files are processed in alphabetical order, so you can control the order by adjusting the date in the filename.

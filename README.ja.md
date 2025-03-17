@@ -75,6 +75,37 @@
 .\aws-cli-config-manager.ps1 -Debug
 ```
 
+### 実行例
+
+デバッグモードで実行した場合の出力例：
+
+```powershell
+PS> .\aws-cli-config-manager.ps1 -Debug
+[DEBUG] Running in debug mode
+[DEBUG] Current working directory: C:\Users\username\aws-settings
+[DEBUG] AWS credentials path: C:\Users\username\.aws\credentials
+[DEBUG] AWS config path: C:\Users\username\.aws\config
+[DEBUG] Credentials directory: C:\Users\username\aws-settings\credentials
+[DEBUG] Backup path: C:\Users\username\.aws\credentials.bak
+[DEBUG] Found 3 files (pattern: credentials.*):
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0301.project-a
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0310.project-b
+[DEBUG]   - C:\Users\username\aws-settings\credentials\credentials.2024-0315.project-c
+...
+[DEBUG] Completed debug mode run - no actual changes were made
+```
+
+通常モードでの実行結果：
+
+```powershell
+PS> .\aws-cli-config-manager.ps1
+Backed up existing file to: C:\Users\username\.aws\credentials.bak
+Successfully updated file: C:\Users\username\.aws\credentials
+Backed up existing file to: C:\Users\username\.aws\config.bak
+Successfully updated file: C:\Users\username\.aws\config
+Process completed: 2 file(s) updated
+```
+
 ## 高度な使用方法
 
 - **順序制御**: ファイルはアルファベット順で処理されるため、ファイル名の日付を調整することで順序を制御できます。
