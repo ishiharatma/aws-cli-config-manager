@@ -33,6 +33,8 @@ The script:
 4. Compares with existing AWS CLI config files
 5. If different, backs up existing files and replaces them with the merged version
 
+![flows](./aws-cli-config-manager.drawio.svg)
+
 ## Setup
 
 1. Create two directories in your working directory:
